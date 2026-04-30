@@ -1,6 +1,6 @@
 # V12 Flex Generator
 
-Générateur de graphique "I Drive A V12" inspiré du post Instagram [@yunggeeski_](https://www.instagram.com/yunggeeski_/).
+Générateur de graphique "I Drive A CAR" 
 Saisie manuelle des valeurs année par année, rendu live, export PNG.
 
 ## Stack
