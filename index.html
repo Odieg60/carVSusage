@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V12 Flex Generator — I Drive A...</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>V12 Flex Generator</h1>
+  <p class="subtitle">Génère ton graphique "I Drive A V12" — saisis tes propres chiffres, le graphique se met à jour en live.</p>
+</header>
+
+<main>
+  <section class="controls">
+    <div class="field">
+      <label for="title">Titre du graphique</label>
+      <input type="text" id="title" value='"I Drive A V12"' maxlength="60">
+    </div>
+
+    <div class="field">
+      <label for="vehicleLabel">Label véhicule (courbe bleue)</label>
+      <input type="text" id="vehicleLabel" value="S65 AMG" maxlength="40">
+    </div>
+
+    <div class="field">
+      <label for="maintLabel">Label maintenance (courbe rouge)</label>
+      <input type="text" id="maintLabel" value="Maintenance" maxlength="40">
+    </div>
+
+    <div class="field">
+      <label for="currency">Symbole monnaie</label>
+      <select id="currency">
+        <option value="$">$</option>
+        <option value="€">€</option>
+        <option value="CHF" selected>CHF</option>
+        <option value="£">£</option>
+        <option value="¥">¥</option>
+      </select>
+    </div>
+  </section>
+
+  <section class="data-entry">
+    <h2>Données année par année</h2>
+    <p class="hint">Valeur du véhicule = ce qu'il vaut cette année-là. Maintenance cumulée = total dépensé depuis l'achat.</p>
+
+    <table id="dataTable">
+      <thead>
+        <tr>
+          <th>Année</th>
+          <th>Valeur véhicule</th>
+          <th>Maintenance cumulée</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="dataBody">
+        <!-- Lignes injectées par JS -->
+      </tbody>
+    </table>
+
+    <div class="row-actions">
+      <button id="addRow" class="btn-secondary">+ Ajouter une année</button>
+      <button id="resetData" class="btn-ghost">Reset exemple</button>
+    </div>
+  </section>
+
+  <section class="output">
+    <div id="chartCard" class="chart-card">
+      <div class="chart-title" id="chartTitleDisplay">"I Drive A V12"</div>
+      <div class="chart-wrapper">
+        <canvas id="chart"></canvas>
+      </div>
+      <div class="chart-year" id="chartYearDisplay"></div>
+    </div>
+
+    <div class="export-actions">
+      <button id="exportPng" class="btn-primary">📥 Exporter en PNG</button>
+      <button id="copyJson" class="btn-secondary">📋 Copier les données (JSON)</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Inspired by @yunggeeski_ — vanilla JS + Chart.js, no tracking, no backend.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
